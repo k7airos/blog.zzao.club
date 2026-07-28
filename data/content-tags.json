@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-24T10:23:58.548Z",
+  "generatedAt": "2026-07-28T09:46:52.997Z",
   "source": "content/**/*.md",
-  "fileCount": 263,
+  "fileCount": 264,
   "tagCount": 100,
-  "untaggedCount": 134,
+  "untaggedCount": 135,
   "topN": 5,
   "topTags": [
     "Nuxt",
