@@ -2,8 +2,11 @@
 title: OpenClaw 的主模型选什么，非常有说法
 description: 用聊天工具作为 AI 入口，选主模型这件事，从某种角度讲，选的是一种熟悉的聊天感。
 date: 2026-02-28
-author: "Kairos"
-tags: [openclaw, AI]
+author: Kairos
+tags:
+  - openclaw
+  - AI
+zzhub_account: default
 ---
 
 **GPT 5.2，像是会发`/微笑`的父母那辈的人**。

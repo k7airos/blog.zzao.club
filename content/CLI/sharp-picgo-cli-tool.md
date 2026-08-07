@@ -3,11 +3,19 @@ title: 🚀提升效率！早早下班！Sharp+Picgo实现压缩后上传并替�
 published: 2023-01-01
 author: zzdaddy
 description: sharp压缩图片，picgo自动上传
-tags: ["技术", "Cli"]
+tags:
+  - 技术
+  - Cli
 category: 技术
 lastmod: 2025-08-19
 date: 2023-12-13
 showTitle: 🚀提升效率！早早下班！Sharp+Picgo实现压缩后上传并替换外链的命令行工具
+zzhub_run_id: 20260806-110135-72fc01
+zzhub_state_path: /Users/aatrox/.oh-my-zzhub/posts/2026-08/test-ob-zzhub-pipeline-v2/workflow-state.json
+zzhub_published: true
+zzhub_published_at: 2026-08-06T03:18:38Z
+zzhub_account: default
+zzhub_draft_id: 2XxNH1Uyp_X7Bcd9RGIxcMVKlbg1NgDy2BdfPHdM8r2ItNduk0DhTQmSoDTTSI-H
 ---
 ## 引言
 

@@ -16,15 +16,25 @@ export default defineNuxtConfig({
   experimental: {
     watcher: isDev ? 'parcel' : undefined,
   },
+  // Dual-write: keep nuxt-umami until Pulse numbers are validated (do not remove yet).
+  // nuxt-pulse is vendored under modules/ (blog Nuxt 4.0 cannot load sibling ../pulse module deps).
   modules: ['@nuxt/ui', '@nuxtjs/robots', '@nuxt/content', '@nuxt/image', '@nuxt/icon',
     '@nuxtjs/mdc',
-    '@nuxtjs/color-mode', '@pinia/nuxt', '@vueuse/nuxt', 'shadcn-nuxt', '@nuxt/eslint', 'nuxt-umami'],
+    '@nuxtjs/color-mode', '@pinia/nuxt', '@vueuse/nuxt', 'shadcn-nuxt', '@nuxt/eslint', 'nuxt-umami',
+    './modules/nuxt-pulse/module'],
 
   umami: {
     autoTrack: true,
     id: process.env.NUXT_PUBLIC_UMAMI_WEBSITE_ID || '73dfbd1a-1df4-4c73-88d3-899bebe63672',
     host: process.env.NUXT_PUBLIC_UMAMI_HOST || 'https://umami.nezus.cn',
     domains: 'blog.nezus.cn',
+  },
+  pulse: {
+    host: process.env.NUXT_PUBLIC_PULSE_HOST || '',
+    websiteId: process.env.NUXT_PUBLIC_PULSE_WEBSITE_ID || '',
+    autoTrack: true,
+    // enabled only when host + websiteId are set
+    enabled: !!(process.env.NUXT_PUBLIC_PULSE_HOST && process.env.NUXT_PUBLIC_PULSE_WEBSITE_ID),
   },
   components: [
     {

@@ -2,8 +2,15 @@
 title: Cli工具集成到Electron客户端
 date: 2025-04-10
 lastmod: 2025-08-19
-tags: ["Cli"]
+tags:
+  - Cli
 description: 把基于JS/TS的命令行工具，转换为Electron客户端，无需重写代码，还能大大提升非开发者使用体验
+zzhub_run_id: 20260806-110135-72fc01
+zzhub_state_path: /Users/aatrox/.oh-my-zzhub/posts/2026-08/test-ob-zzhub-pipeline-v2/workflow-state.json
+zzhub_published: true
+zzhub_published_at: 2026-08-06T03:18:31Z
+zzhub_account: default
+zzhub_draft_id: 2XxNH1Uyp_X7Bcd9RGIxcMVKlbg1NgDy2BdfPHdM8r2ItNduk0DhTQmSoDTTSI-H
 ---
 ## 背景
 

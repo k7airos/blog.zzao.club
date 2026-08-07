@@ -1,8 +1,10 @@
 ---
 title: AI终于开始招聘人类干活了
 date: 2026-02-05
-lastmod: "2026-02-05T10:59:39.549Z"
-tags: ["AI"]
+lastmod: 2026-02-05T10:59:39.549Z
+tags:
+  - AI
+zzhub_account: default
 ---
 
 ![1.00](https://img.zzao.club/zotepad/1770283461718_eurujwhj619.png)

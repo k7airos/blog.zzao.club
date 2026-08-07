@@ -2,8 +2,14 @@
 title: Z-CLI 使用说明
 date: 2025-03-21
 lastmod: 2025-08-19
-tags: ["Cli"]
-
+tags:
+  - Cli
+zzhub_run_id: 20260806-110135-72fc01
+zzhub_state_path: /Users/aatrox/.oh-my-zzhub/posts/2026-08/test-ob-zzhub-pipeline-v2/workflow-state.json
+zzhub_published: true
+zzhub_published_at: 2026-08-06T03:18:31Z
+zzhub_account: default
+zzhub_draft_id: 2XxNH1Uyp_X7Bcd9RGIxcMVKlbg1NgDy2BdfPHdM8r2ItNduk0DhTQmSoDTTSI-H
 ---
 ## 安装
 
