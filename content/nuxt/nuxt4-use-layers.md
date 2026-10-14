@@ -183,7 +183,7 @@ extend: [ 'app/auth' ]
 而其他项目如果想使用它的仓库，只需要配置：
 
 ```typescript
-extends: [ ['github:aatrooox/zc-auth-layer', { install: true }] ]
+extends: [ ['github:k7airos/zc-auth-layer', { install: true }] ]
 ```
 
 也可以它发布后的 npm 包
@@ -233,7 +233,7 @@ extends: [ '@zzaoclub/zc-auth-layer']
 
 所以对于个人开发者来说，我觉得 `Layer` 是个锦上添花的利器。因为大部分业务不会太复杂，而且偏前端更多一些。自己封装好的各种功能的 `Layer` 信手拈来，开发效率大大提高，还不耽误二次开发。
 
-于是我在给自己的[博客](https://blog.zzao.club)尝试增加了一个权限层 [auth layer](https://github.com/aatrooox/zc-auth-layer) 后，才写下了这篇文章。
+于是我在给自己的[博客](https://blog.zzao.club)尝试增加了一个权限层 [auth layer](https://github.com/k7airos/zc-auth-layer) 后，才写下了这篇文章。
 
 期待后续 Layer 的大放异彩。
 

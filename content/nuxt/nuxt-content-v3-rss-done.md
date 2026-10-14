@@ -23,7 +23,7 @@ content: defineCollection({
       include: '**/*.md',
       exclude: ['**/-*.md', 'book/**/*.md'],
       prefix: '/post',
-      repository: 'https://github.com/aatrooox/xxxx',
+      repository: 'https://github.com/k7airos/xxxx',
       authToken: process.env.CONTENT_REPO_TOKEN
     },
     schema: z.object({

@@ -16,7 +16,7 @@ const version = config.public.Z_BLOG_VERSION
         <span>v{{ version }}</span>
         <span class="text-zinc-300">|</span>
         <span>&copy; {{ new Date().getFullYear() }}</span>
-        <a href="https://github.com/aatrooox" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-600 transition-colors underline underline-offset-2">Aatrox</a>
+        <a href="https://github.com/k7airos" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-600 transition-colors underline underline-offset-2">Aatrox</a>
       </div>
     </div>
   </footer>

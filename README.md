@@ -139,7 +139,7 @@ content: defineCollection({
       prefix: '/post',
       // cwd: process.env.CONTENT_FS_PATH,
       // TODO 替换为你的仓库地址  不能使用组织仓库
-      repository: 'https://github.com/aatrooox/Blog',
+      repository: 'https://github.com/k7airos/Blog',
       // TODO 替换为你的token 在 github > settings > developers settings > personal access tokens
       authToken: process.env.CONTENT_REPO_TOKEN
     },

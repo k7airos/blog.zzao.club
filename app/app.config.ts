@@ -26,7 +26,7 @@ export default defineAppConfig({
       icon: 'icon-park-outline:github',
       // 这是一个 hover 弹出框，目前用来放一个图片
       popover: '',
-      url: 'https://github.com/aatrooox/blog.zzao.club',
+      url: 'https://github.com/k7airos/blog.zzao.club',
     },
     {
       name: '微信公众号',
@@ -108,12 +108,12 @@ export default defineAppConfig({
   ],
   // GitHub pinned 项目展示
   githubRepos: [
-    { name: 'imgx', desc: '基于 Nuxt 和 Nitro 的图片生成/处理器', url: 'https://github.com/aatrooox/imgx', lang: 'TypeScript', langColor: '#3178c6', stars: 117 },
-    { name: 'blog.zzao.club', desc: 'A personal blog, power by Nuxt & Nuxt/Content.', url: 'https://github.com/aatrooox/blog.zzao.club', lang: 'Vue', langColor: '#41b883', stars: 1 },
-    { name: 'zotepad', desc: '记事本及其上下游工作流工具', url: 'https://github.com/aatrooox/zotepad', lang: 'Vue', langColor: '#41b883', stars: 7 },
-    { name: 'PixeledPicPro', desc: '像素风图片编辑器', url: 'https://github.com/aatrooox/PixeledPicPro', lang: 'Vue', langColor: '#41b883', stars: 11 },
-    { name: 'astro-onwidget-zz', desc: '基于 AstroWind 的本土化改造', url: 'https://github.com/aatrooox/astro-onwidget-zz', lang: 'Astro', langColor: '#ff5a03', stars: 5 },
-    { name: 'z-cli', desc: 'all-in-one cli工具箱', url: 'https://github.com/aatrooox/z-cli', lang: 'TypeScript', langColor: '#3178c6', stars: 5 },
+    { name: 'imgx', desc: '基于 Nuxt 和 Nitro 的图片生成/处理器', url: 'https://github.com/k7airos/imgx', lang: 'TypeScript', langColor: '#3178c6', stars: 117 },
+    { name: 'blog.zzao.club', desc: 'A personal blog, power by Nuxt & Nuxt/Content.', url: 'https://github.com/k7airos/blog.zzao.club', lang: 'Vue', langColor: '#41b883', stars: 1 },
+    { name: 'zotepad', desc: '记事本及其上下游工作流工具', url: 'https://github.com/k7airos/zotepad', lang: 'Vue', langColor: '#41b883', stars: 7 },
+    { name: 'PixeledPicPro', desc: '像素风图片编辑器', url: 'https://github.com/k7airos/PixeledPicPro', lang: 'Vue', langColor: '#41b883', stars: 11 },
+    { name: 'astro-onwidget-zz', desc: '基于 AstroWind 的本土化改造', url: 'https://github.com/k7airos/astro-onwidget-zz', lang: 'Astro', langColor: '#ff5a03', stars: 5 },
+    { name: 'z-cli', desc: 'all-in-one cli工具箱', url: 'https://github.com/k7airos/z-cli', lang: 'TypeScript', langColor: '#3178c6', stars: 5 },
   ],
   products: [
     {

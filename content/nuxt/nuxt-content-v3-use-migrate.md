@@ -119,7 +119,7 @@ source: {
       exclude: ['blog/**/-*.md'],
       prefix: '/post',
       // cwd: process.env.CONTENT_FS_PATH,
-      repository: 'https://github.com/aatrooox/xxxxx',
+      repository: 'https://github.com/k7airos/xxxxx',
       authToken: process.env.CONTENT_REPO_TOKEN
     },
 ```
@@ -144,7 +144,7 @@ source: {
 
 配置 `content` 的 `repo` 时，就配这个需要对外生成文章的仓库就好了。
 
-当运行 `dev` 时，刚才提到的本地数据库目录 `.data`，下会多出一个 `github-aatrooox-xxx-main`，里面就是所有原始的文件。当应用执行第一个查询检索内容时，就会读取上一步已经生成的 `Dump` 恢复到目标数据库中，同时有一套检查机制确保数据库中为最新的内容和避免重复导入。在客户端导航时，会在浏览器中初始化本地 SQLite，初始化后所有查询就是在本地进行了，所以 v3 的查询要比 v2 感觉上快很多。
+当运行 `dev` 时，刚才提到的本地数据库目录 `.data`，下会多出一个 `github-k7airos-xxx-main`，里面就是所有原始的文件。当应用执行第一个查询检索内容时，就会读取上一步已经生成的 `Dump` 恢复到目标数据库中，同时有一套检查机制确保数据库中为最新的内容和避免重复导入。在客户端导航时，会在浏览器中初始化本地 SQLite，初始化后所有查询就是在本地进行了，所以 v3 的查询要比 v2 感觉上快很多。
 
 以上就是 v3 的使用指南，基于官方的迁移说明，并且还解决了一些中文互联网才会有问题。
 

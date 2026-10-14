@@ -92,4 +92,4 @@ RUNTIME_ENV=electron bun build ./src/index.js --compile --target=bun-windows-x64
 - `sharp` 可能在构建成客户端后会报错 (待解决)
 ## 开源地址
 
-[Github](https://github.com/aatrooox/cli-to-electron)
+[Github](https://github.com/k7airos/cli-to-electron)

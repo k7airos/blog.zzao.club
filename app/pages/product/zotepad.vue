@@ -89,10 +89,10 @@ onMounted(() => {
           </p>
 
           <div class="flex flex-wrap justify-center gap-6">
-            <Button size="lg" class="h-12 px-8 text-base gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-0.5" @click="navigateTo('https://github.com/aatrooox/zotepad/releases', { external: true, open: { target: '_blank' } })">
+            <Button size="lg" class="h-12 px-8 text-base gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-0.5" @click="navigateTo('https://github.com/k7airos/zotepad/releases', { external: true, open: { target: '_blank' } })">
               <Icon name="lucide:download" class="w-5 h-5" /> 立即下载
             </Button>
-            <Button variant="outline" size="lg" class="h-12 px-8 text-base gap-2 bg-background/50 backdrop-blur-sm hover:bg-secondary/50 border-border/50" @click="navigateTo('https://github.com/aatrooox/zotepad', { external: true, open: { target: '_blank' } })">
+            <Button variant="outline" size="lg" class="h-12 px-8 text-base gap-2 bg-background/50 backdrop-blur-sm hover:bg-secondary/50 border-border/50" @click="navigateTo('https://github.com/k7airos/zotepad', { external: true, open: { target: '_blank' } })">
               <Icon name="lucide:book-open" class="w-5 h-5" /> 查看源码
             </Button>
           </div>

@@ -60,7 +60,7 @@ AI 就会自动调用 pipeline ，一步步完成准备、审核、排版、发�
 
 **多账号切换。** 如果你同时运营大号和小号，它可以通过关键词自动识别你这次的发布目标，不用手动切换账号配置。
 
-**完全开源免费。** 代码在 GitHub 上： https://github.com/aatrooox/zzhub-pipeline。直接 clone 下来就能用，没有付费墙。
+**完全开源免费。** 代码在 GitHub 上： https://github.com/k7airos/zzhub-pipeline。直接 clone 下来就能用，没有付费墙。
 
 ### 适合谁用？
 
@@ -71,6 +71,6 @@ AI 就会自动调用 pipeline ，一步步完成准备、审核、排版、发�
 技术门槛不算高。会用终端、能装个 Bun 运行时就行。实在不想折腾命令行，装个 Claude Code Skill 直接用自然语言驱动也可以。
 
 
-工具已经开源在 GitHub ： https://github.com/aatrooox/zzhub-pipeline
+工具已经开源在 GitHub ： https://github.com/k7airos/zzhub-pipeline
 
 欢迎提 issue 说需求，也欢迎加群一起讨论。如果你也有类似的痛点，或者有自己的一套发布流程想自动化，来聊聊，说不定能一起做出更有意思的东西。

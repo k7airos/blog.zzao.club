@@ -27,7 +27,7 @@ book: defineCollection({
     source: {
       include: 'book/**/*.md',
       exclude: ['book/**/-*.md'],
-      repository: 'https://github.com/aatrooox/Blog',
+      repository: 'https://github.com/k7airos/Blog',
       authToken: process.env.CONTENT_REPO_TOKEN
     },
     schema: z.object({

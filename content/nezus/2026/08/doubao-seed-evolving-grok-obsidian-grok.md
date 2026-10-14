@@ -99,13 +99,13 @@ AI 时代，最大的好处就是可以无限简化自己的工作流，并且�
 
 封面图也是 CLI 直接用标题生成了， Markdown 渲染 HTML 也是基于 milkdown 这个插件来自定义的样式，我就只管码字。
 
-对了， CLI 也是[开源](https://github.com/aatrooox/zzhub-pipeline)的，还在持续优化和升级中。这次本来是想用 **doubao-seed-evolving** 做一些更底层的编码任务，但是 Agent Plan 套餐的**Token 不够**🤡，下次再搞吧。
+对了， CLI 也是[开源](https://github.com/k7airos/zzhub-pipeline)的，还在持续优化和升级中。这次本来是想用 **doubao-seed-evolving** 做一些更底层的编码任务，但是 Agent Plan 套餐的**Token 不够**🤡，下次再搞吧。
 
 **本次消耗 Token 14M ，产出 1500 行代码左右，不算多。**
 
 ![1.00](https://img.nezus.cn/nezus/a41666a0-4588-493a-9ce5-3d34fcf5dd3f/notes/067c4b58-d88a-4eec-bada-aeea549f02e6/2026086_8586b141e143_image.png)
 
-代码已在[Github 开源](https://github.com/aatrooox/zzhub-ob-wxpublish)，欢迎试用～
+代码已在[Github 开源](https://github.com/k7airos/zzhub-ob-wxpublish)，欢迎试用～
 
 ## 评价
 

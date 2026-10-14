@@ -96,7 +96,7 @@ description: Nuxt Content 中配置和使用 toc
 
 所以只需要使用一个 `computed` 拿到 `toc` 数据，然后把数据传递给组件即可。
 
-我观察了一圈，感觉[少数派](https://sspai.com/)的 TOC 组件是比较美观的，于是我仿照他们的思路封装了自己的 [TOC 组件](https://github.com/aatrooox/blog.zzao.club/blob/main/app/components/common/AppToc.vue)
+我观察了一圈，感觉[少数派](https://sspai.com/)的 TOC 组件是比较美观的，于是我仿照他们的思路封装了自己的 [TOC 组件](https://github.com/k7airos/blog.zzao.club/blob/main/app/components/common/AppToc.vue)
 
 toc 的配置位于 `nuxt.config.ts` ：
 

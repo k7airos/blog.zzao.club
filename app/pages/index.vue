@@ -40,7 +40,7 @@ useHead({
         'name': 'Kairos',
         'url': 'https://zzao.club/about',
         'sameAs': [
-          'https://github.com/aatrooox',
+          'https://github.com/k7airos',
         ],
       }),
     },

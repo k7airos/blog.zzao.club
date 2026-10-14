@@ -36,7 +36,7 @@ tags: ["IMGX", "Nuxt"]
 
 而且这还仅仅是 `IMG` 部分的功能，`X` 部分我还没开发，所以为了避免未来代码烂掉。
 
-我新开了一个仓库：[imgx-nitro](https://github.com/aatrooox/imgx-nitro)，用于继续开发新的 Api 功能。
+我新开了一个仓库：[imgx-nitro](https://github.com/k7airos/imgx-nitro)，用于继续开发新的 Api 功能。
 
 现有的仓库先保留（毕竟有 100 个 star），但暂时不会在这个基础上写新功能了，新的前端仓库也会基于 `Vue3` 再开一个。
 

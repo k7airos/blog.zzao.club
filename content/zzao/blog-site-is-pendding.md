@@ -29,7 +29,7 @@ export default defineNuxtConfig({
 
 同时，也从 `Gitea` 设置了 `Github` 的镜像仓库，**如果侥幸有人使用的话，能够反馈一些不足之处是最好的。**
 
-[Github](https://github.com/aatrooox/blog.zzao.club)
+[Github](https://github.com/k7airos/blog.zzao.club)
 
 ## 2025年01月14日11:34:17 更新
 

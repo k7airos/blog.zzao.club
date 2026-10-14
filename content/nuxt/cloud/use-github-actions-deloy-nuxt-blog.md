@@ -23,7 +23,7 @@ tags: ["博客", "Nuxt"]
 
 等 `NuxtContent` 支持主动拉取新的仓库文件或者定时拉取后，再进行调整
 
-然后分享一下，[博客开源地址](https://github.com/aatrooox/blog.zzao.club)
+然后分享一下，[博客开源地址](https://github.com/k7airos/blog.zzao.club)
 
 以及 `action` 脚本
 
