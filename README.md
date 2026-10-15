@@ -1,8 +1,21 @@
 # 博客站
 
-一个基于 [Nuxt@4.0.3](https://nuxt.com/)、[NuxtContent@3.4.0](https://content.nuxt.com/)、[shadcn/vue](https://www.shadcn-vue.com/)、[inspira-ui](https://inspira-ui.com/components)、Dizzle、MySQL、Redis的全栈站点
+一个基于 [Nuxt](https://nuxt.com/)、[Nuxt Content](https://content.nuxt.com/)、[shadcn/vue](https://www.shadcn-vue.com/)、[inspira-ui](https://inspira-ui.com/components)、Drizzle、MySQL 和 Redis 的博客源码项目，具体版本以 `package.json` 与锁文件为准。
 
 **娱乐性质的个人空间! **
+
+## 生态与依赖
+
+| 项目 | 与博客的关系 |
+| --- | --- |
+| [zzhub-pipeline](https://github.com/k7airos/zzhub-pipeline) | 博客发布路由的上游调用方，将文章写入本项目 `content/nezus/YYYY/MM/slug.md` 并执行配置的发布命令；本博客不是 Pipeline npm 包的依赖 |
+| [Bun 微信中转服务](https://github.com/k7airos/bun-wx-server) | 从本项目抽出的认证、PAT、COS 与基础微信代理实现，可独立自托管；不等同于完整 Pipeline 后端 |
+| [myno](https://github.com/k7airos/myno) | 需要公众号正文编辑、调样式和复制富文本时可单独使用；不属于博客运行时依赖 |
+| [Kairos Skills](https://github.com/k7airos/kairos-skills) | 供 Agent 准备文章、遵守写作语法并调度 Pipeline 的配套说明 |
+
+本项目面向独立博客用户，也作为 Pipeline 博客消费方示例。Markdown 和内容站点可单独运行；源码保留的登录、评论和 API 能力需要动态服务及对应数据库。当前部署脚本输出静态站点，不能据此宣称它同时部署了这些 API。
+
+在 Pipeline 配置中设置 `paths.blogRoot` 指向本仓库、`commands.blogPublish` 为自己的发布命令后，`blog` 路由才会同步和部署。目录、frontmatter 与图片上传规则见 [Pipeline 博客 provider](https://github.com/k7airos/zzhub-pipeline/blob/main/src/providers/blog.ts)。本仓库 `pnpm publish:post` 包含 Git 暂存、提交、推送及部署，使用前应确认工作区内容。
 
 ![](/githubAssets/page-home.png)
 ![](/githubAssets/page-memo.png)
@@ -74,7 +87,7 @@ DATABASE_URL=mysql://root:123456@127.0.0.1:3306/blog
 REDIS_HOST=127.0.0.1
 REDIS_PORT=6379
 
-# 从 GitHub 仓库拉取文章内容所需（如不使用，可留空或注释 content.config.ts 的 source）
+# 可选：自定义 GitHub 内容源时使用，当前默认本地 content/
 CONTENT_REPO_TOKEN=
 
 # 应用密钥（本地可任意随机值，生产需妥善保管）
@@ -117,11 +130,11 @@ pnpm dev
 排错小贴士：
 - 3306/6379 端口被占用：修改 `docker-compose.local.yml` 的端口映射，或停止占用进程。
 - better-sqlite3 报错：执行 `pnpm rebuild better-sqlite3`。
-- 无法拉取 GitHub 文章：确认 `CONTENT_REPO_TOKEN` 有权限，或临时注释 `content.config.ts` 的 `source` 配置。
+- 自定义远程内容源不可用：检查 `content.config.ts` 与对应 Token；默认本地 `content/` 不需要 GitHub 内容权限。
 
 ## 运行前配置
 
-`content.config.ts`
+`content.config.ts` 当前从本地 `content/` 读取 Markdown。下面是改用 GitHub 内容源的可选示例，不是默认配置：
 
 ```ts
 // content 可以随意更改, 对应的是 queryCollection 的第一个参数
@@ -186,65 +199,25 @@ pnpm dev
 
 ## 生产部署
 
-部署链路：GitHub Actions 构建 -> 打包 `.output` + `pm2.config.json` + `pm2.preload.cjs` -> SSH 上传 -> 服务器 `/root/web/blog` 原地解压 -> Drizzle 迁移 -> 服务端重建 `better-sqlite3` -> PM2 启动 `Blog`（端口 4571）。
+当前 `scripts/deploy-prod.sh` 使用本机静态构建：安装依赖、lint、提取标签、`pnpm generate`，打包 `.output/public`，经 SSH/SCP 上传并切换远端静态目录。它不再走 GitHub Actions + PM2 的 SSR 部署流程，也不会部署本仓库 `server/` API。
 
-1) 服务器准备
-- 安装 Node.js 20+ 与 PM2（全局）
-  - `npm i -g pm2`
-- 创建目录与生产环境变量文件：
-  - 应用目录：`/root/web/blog`
-  - 环境文件：`/root/envs/blog/.env`
-- 必需变量（示例）：
-  - `DATABASE_URL=mysql://user:pass@host:3306/blog`
-  - `NUXT_SESSION_PASSWORD=<32位随机字符串>`
-  - `NUXT_JWT_SECRET=<随机字符串>`
-  - 可选：`REDIS_HOST`、`REDIS_PORT`、`CONTENT_REPO_TOKEN`、`NUXT_*`（Nodemailer、OAuth GitHub、COS、Feishu等）
+```bash
+cp .deploy.prod.env.example .deploy.prod.env
+# 填写自己的远端主机、用户、端口和静态目录后执行
+bash scripts/deploy-prod.sh
+```
 
-2) 配置 GitHub Secrets（仓库 Settings -> Secrets and variables -> Actions）
-- SSH 访问：`SSH_PRIVATE_KEY`、`SSH_HOST`、`SSH_USER`、`SSH_PORT`
-- 应用密钥与依赖：`DATABASE_URL`、`NUXT_SESSION_PASSWORD`、`NUXT_JWT_SECRET`
-- 内容拉取：`CONTENT_REPO_TOKEN`（若启用 content 仓库）
-- 可选通知与第三方：`NUXT_FEISHU_WEBHOOK`、`NUXT_FEISHU_USER_ID`、`NUXT_NODEMAILER_*`、`NUXT_OAUTH_GITHUB_CLIENT_ID/SECRET`、`NUXT_COS_*`
+配置中的 `REMOTE_WWW_DIR` 是静态站点目录，Web 服务器应指向它；Node、MySQL 和 Redis 是否在生产运行取决于另行部署的动态服务。源码开发所需的数据库配置不等同于静态部署要求。
 
-3) 触发部署
-- Push 到 `main` 且提交信息包含 `chore(release)` 会自动触发（可使用 `pnpm release:patch|minor|major` 脚本生成）
+发布文章时使用：
 
-4) 运行方式与端口
-- PM2 使用 `pm2.config.json` 启动进程名 `Blog`，监听 `4571`
-- 运行时通过 `node_args: -r ./pm2.preload.cjs` 读取 `/root/envs/blog/.env`，无需安装 `dotenv`
-- 反向代理（示例 Nginx）：
-  ```nginx
-  server {
-    listen 80;
-    server_name your.domain.com;
-    location / {
-      proxy_pass http://127.0.0.1:4571;
-      proxy_set_header Host $host;
-      proxy_set_header X-Real-IP $remote_addr;
-      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-      proxy_set_header X-Forwarded-Proto $scheme;
-    }
-  }
-  ```
+```bash
+pnpm publish:post
+```
 
-5) 数据库迁移
-- 工作流会在服务器上自动执行 Drizzle 迁移（优先 `dotenv-cli`，无则回退为 `source ENVFILE` + `npx drizzle-kit migrate`）
-- 如服务器无公网 npm，可自行预先装好 `dotenv-cli`，或手动执行迁移
+它依次提取 `data/content-tags.json`、执行 Git 暂存/提交/推送，再调用部署脚本。脚本还会核对标签与 Git 是否一致，拒绝部署未提交的标签结果。不要在含有无关改动的工作区直接运行该命令。
 
-6) 原生模块重建
-- 工作流会在服务器解压产物后、PM2 启动前执行 `npm rebuild --prefix /root/web/blog/server better-sqlite3`
-- 这一步用于按服务器当前 Node ABI 重建 `better-sqlite3`，避免 `/admin` 等 SSR 页面出现 `Module did not self-register`
-- 如果服务器缺少编译环境，请预先安装 `build-essential`/`make`/`g++`/`python3`
-
-7) 回滚与灰度（可选）
-- 回滚：直接 `git revert` 上次 release 提交并 push（同样会触发部署）
-- 灰度：仓库包含 `pm2.canary.json`（4572 端口），如需金丝雀可另行添加对应 Workflows 与目录（例如 `/root/web/blog-canary`）
-
-8) 常见排查
-- 启动异常：`pm2 logs Blog` 查看日志
-- 环境变量未生效：确认 `/root/envs/blog/.env` 存在且键名正确；`pm2 env 0`/`pm2 describe Blog` 检查进程环境
-- 无法连接数据库/Redis：验证 `DATABASE_URL`、`REDIS_HOST/PORT` 与网络策略
-- `better-sqlite3` 仍报错：在服务器执行 `npm rebuild --prefix /root/web/blog/server better-sqlite3` 后再重启 PM2
+仅更新包版本的 `release:*` 命令不会自动完成站点部署；需要单独执行部署脚本。真实主机、部署配置和凭据保存在仓库外，不随 README 提供。
 
 ## 发布
 
